@@ -84,6 +84,7 @@ func add_class(p_name:String, p_base:String, p_path:String, p_icon:String = ""):
 #	ProjectSettings.save()
 	
 	addedClassPathes.append(p_path)
+	get_editor_interface().get_resource_filesystem().scan()
 	get_editor_interface().get_resource_filesystem().update_script_classes()
 
 func remove_classes():
@@ -133,6 +134,7 @@ func remove_classes():
 #		ProjectSettings.save()
 	
 	addedClassPathes.clear()
+	get_editor_interface().get_resource_filesystem().scan()
 	get_editor_interface().get_resource_filesystem().update_script_classes()
 
 func path_fix(p_path:String):
